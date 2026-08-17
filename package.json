@@ -27,6 +27,7 @@
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
+    "flash": "^1.1.0",
     "joi": "^18.2.3",
     "mongoose": "^9.9.2"
   },

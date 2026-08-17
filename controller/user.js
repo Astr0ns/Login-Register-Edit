@@ -2,17 +2,9 @@ var express = require("express");
 var router = express.Router();
 const bcrypt = require("bcrypt");
 var salt = bcrypt.genSaltSync(12);
-var connection = require("./config/pool_conexoes");
+var connection = require("../../config/pool_conexoes");
 const flash = require('connect-flash');
-
-router.get("/", async function (req, res) {
-    const email = req.session ? req.session.email : "";
-    res.render("pages/index", {
-        email: email,
-        userId: req.session ? req.session.userId : null,
-        valores: { nome_usu: "", nomeusu_usu: "", email_usu: "", senha_usu: "" },
-    });
-});
+const app = require('../../app');
 
 router.get("/register", async function (req, res) {
     res.render("pages/register", {
@@ -35,17 +27,3 @@ const registrarUsuario = async (nome_usu, nomeusu_usu, email_usu, senha_usu) => 
         });
     });
 };
-
-router.post("/fazerRegistro", usuarioController.registrarUsu, async function (req, res) {}); 
-
-router.get("/login", async function (req, res) {
-    res.render("pages/Login", {
-        valores: { email_usu: "", senha_usu: "" },
-    });
-});
-
-router.get("/Login", async function (req, res) {
-    res.redirect("/login");
-});
-
-module.exports = router;
