@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Astr0ns/Login-Register-Edit#readme",
   "dependencies": {
+    "@supabase/ssr": "^0.12.4",
+    "@supabase/supabase-js": "^2.112.3",
     "bcrypt": "^6.0.0",
     "connect-flash": "^0.1.1",
     "dotenv": "^17.4.2",
@@ -29,9 +31,11 @@
     "express-session": "^1.19.0",
     "flash": "^1.1.0",
     "joi": "^18.2.3",
-    "mongoose": "^9.9.2"
+    "mongoose": "^9.9.2",
+    "pg": "^8.23.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "prisma": "^7.9.1"
   }
 }

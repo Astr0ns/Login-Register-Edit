@@ -1,13 +1,11 @@
-equire('dotenv').config();
+require('dotenv').config();
 const { Pool } = require('pg');
-const usuarioController = require('../controller/usuarioController');
-
-console.log('DATABASE_URL carregada:', process.env.DATABASE_URL); // 👈 linha nova de diagnóstico
+console.log('DATABASE_URL carregada:', Boolean(process.env.DATABASE_URL));
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
-  family: 4, // Força IPv4
+  family: 4,
 });
 
 // Testa a conexão ao iniciar
